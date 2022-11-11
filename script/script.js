@@ -27,15 +27,15 @@ textAreaEl.each(function (index) {
 });
 
 // Save events to the planner
-function saveButtonHandler(e) {
+function saveButtonHandler(event) {
     var plan = {};
 
-    if($(e.target).is('i')) {
-        plan.eventText = $(e.target).parent('button').siblings('textarea').val()
-        plan.eventHour = $(e.target).parent('button').siblings('p').text()
+    if($(event.target).is('i')) {
+        plan.eventText = $(event.target).parent('button').siblings('textarea').val()
+        plan.eventHour = $(event.target).parent('button').siblings('p').text()
     } else {
-        plan.eventText = $(e.target).siblings('textarea').val();
-        plan.eventHour = $(e.target).siblings('p').text();
+        plan.eventText = $(event.target).siblings('textarea').val();
+        plan.eventHour = $(event.target).siblings('p').text();
     }
 
     if (workDay.length === 0) {
